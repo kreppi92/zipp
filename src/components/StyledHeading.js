@@ -1,9 +1,9 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const StyledHeading = styled.h1`
+export const StyledHeading = styled.p`
   font-size: ${(props) => props.fontSize};
   font-weight: ${(props) => props.fontWeight};
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   background: -webkit-gradient(
     linear,
     left top,
@@ -28,6 +28,6 @@ export const StyledHeading = styled.h1`
 `;
 
 StyledHeading.defaultProps = {
-  fontSize: '150px',
+  fontSize: "24px",
   fontWeight: 800,
 };

@@ -3,7 +3,6 @@
 html,
 body {
   height: 100%;
-  color: white;
 }
 
 #root {
@@ -12,4 +11,14 @@ body {
 
 .logs {
   word-break: break-all;
+}
+
+::-moz-selection {
+  background: #00ffa3;
+}
+::-webkit-selection {
+  background: #00ffa3;
+}
+::selection {
+  background: #00ffa3;
 }
