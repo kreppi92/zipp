@@ -4,7 +4,7 @@ const theme = {
     white: "#faf9f7",
     blue: "#007ce0",
     navy: "#004175",
-    ["neon-green"]: "#00ffa3",
+    neonGreen: "#00ffa3",
   },
 };
 
