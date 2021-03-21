@@ -1,5 +1,5 @@
-import { Flex, Image, Box, Heading, Text } from "components";
-import zippLogo from "components/assets/zipp-logo-text-black.svg";
+import { Flex, Heading, Text } from "components";
+import ZippAnimation from "components/assets/ZippAnimation";
 import Typed from "react-typed";
 
 const SplashView = () => {
@@ -12,12 +12,21 @@ const SplashView = () => {
       justifyContent="center"
     >
       <Flex flexGrow={1} alignItems="center" justifyContent="center">
-        <Box mb={[50, 100]}>
-          <Image src={zippLogo} width={[200, 400]} />
-        </Box>
+        <Flex
+          mb={[50, 100]}
+          flexDirection={["column", "row"]}
+          alignItems="center"
+          justifyContent="center"
+        >
+          <ZippAnimation width={150} height={150} />
+          <Heading fontFamily="Space mono" fontSize={[6, "112px"]} mb={25}>
+            zipp
+          </Heading>
+        </Flex>
         <Heading fontSize={[1, 3]} color="black">
           <Typed
-            strings={["CRYPTO", "COMING SOON"]}
+            strings={["COMING SOON"]}
+            startDelay={2000}
             backDelay={3000}
             backSpeed={40}
             typeSpeed={50}
