@@ -1,4 +1,4 @@
-import { Flex, Heading, Text } from "components";
+import { Flex, Heading } from "components";
 import ZippAnimation from "components/assets/ZippAnimation";
 import Typed from "react-typed";
 
@@ -18,7 +18,7 @@ const SplashView = () => {
           alignItems="center"
           justifyContent="center"
         >
-          <ZippAnimation width={150} height={150} />
+          <ZippAnimation width={[100, 150]} height={[100, 150]} />
           <Heading fontFamily="Space mono" fontSize={[6, "112px"]} mb={25}>
             zipp
           </Heading>
@@ -34,9 +34,7 @@ const SplashView = () => {
           />
         </Heading>
       </Flex>
-      <Flex mb={2}>
-        <Text>2021 Zipp Inc.</Text>
-      </Flex>
+      <Flex mb={2}>{/* <Text>2021 Zipp Inc.</Text> */}</Flex>
     </Flex>
   );
 };

@@ -22,7 +22,6 @@ const ZippAnimation = ({ width, height }) => (
         <linearGradient id="gradient" gradientTransform="rotate(0, 0.5, 0.5)">
           <motion.stop
             offset="0"
-            fill="#fff"
             animate={{
               stopColor: [
                 "rgba(255,255,255,0)",
@@ -32,7 +31,7 @@ const ZippAnimation = ({ width, height }) => (
                 "rgba(255,255,255,0)",
               ],
             }}
-            transition={{ duration: 2, repeat: 1 }}
+            transition={{ duration: 2, repeat: Infinity, repeatDelay: 5 }}
           />
           <motion.stop
             offset="0.5"
@@ -44,7 +43,12 @@ const ZippAnimation = ({ width, height }) => (
                 "rgba(255,255,255,0)",
               ],
             }}
-            transition={{ duration: 2, repeat: 1 }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              delay: 0.2,
+              repeatDelay: 5,
+            }}
           />
           <motion.stop
             offset="1"
@@ -55,19 +59,12 @@ const ZippAnimation = ({ width, height }) => (
                 "rgba(255,255,255,0)",
               ],
             }}
-            transition={{ duration: 2, repeat: 1 }}
-          />
-        </linearGradient>
-        <linearGradient id="gradient2" gradientTransform="rotate(90, 0.5, 0.5)">
-          <motion.stop
-            offset="0"
-            animate={{ stopColor: "#fff" }}
-            transition={{ duration: 2 }}
-          />
-          <motion.stop
-            offset="1"
-            animate={{ stopColor: "#fff" }}
-            transition={{ duration: 2 }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              delay: 0.4,
+              repeatDelay: 5,
+            }}
           />
         </linearGradient>
       </defs>
@@ -103,20 +100,7 @@ const ZippAnimation = ({ width, height }) => (
         c-5.5,10.1-11.3,20-17.2,29.7c-7.6,12.3-15.5,24.3-23.7,36.1c2.8,0.9,5.5,1.8,8.3,2.7c5.1,1.7,10.3,3.4,15.4,5.2
         c5.1,1.8,10.2,3.6,15.3,5.5l24,8.8l-15.7,18.6c-14.6,17.3-30,34.1-46.1,50.2c-8.1,8-16.4,16-25,23.6c-8.6,7.6-17.4,15.1-26.9,22
         c4.5-10.9,9.8-21.2,15.2-31.3c5.4-10.1,11.3-20,17.2-29.7C136.5,193.6,144.4,181.6,152.6,169.8z"
-        initial="hidden"
-        animate="visible"
-        variants={{
-          hidden: {
-            opacity: 1,
-            pathLength: 1,
-            fill: "url(#gradient)",
-          },
-          visible: {
-            opacity: 0,
-            pathLength: 1,
-            fill: "url(#gradient)",
-          },
-        }}
+        fill="url(#gradient)"
         transition={{
           default: { duration: 3, ease: "easeInOut" },
           fill: { duration: 3, ease: [1, 0, 0.8, 1] },
