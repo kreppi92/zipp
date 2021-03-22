@@ -19,7 +19,7 @@ const SplashView = () => {
           alignItems="center"
           justifyContent="center"
         >
-          <ZippAnimation width={[100, 150]} height={[100, 150]} />
+          <ZippAnimation width={150} height={150} />
           <Heading
             fontFamily="Space mono"
             fontSize={[6, "112px"]}
