@@ -29,17 +29,11 @@ const SplashView = () => {
             zipp
           </Heading>
         </Flex>
-        <Flex
-          maxWidth="70%"
-          width={300}
-          height={50}
-          alignItems="center"
-          mb={100}
-        >
+        <Flex width={500} height={50} alignItems="center">
           <Heading fontSize={[1, 3]} color="black" textAlign="center">
             <Typed
               strings={[
-                "BUILDING FOR #AUDIO, IN #CRYPTO ON @SOLANA.",
+                "BUILDING FOR AUDIO, IN CRYPTO ON SOLANA.",
                 "COMING SOON",
               ]}
               startDelay={2000}
@@ -51,12 +45,12 @@ const SplashView = () => {
             />
           </Heading>
         </Flex>
-        <Flex justifyContent="center" alignItems="center" flexDirection="row">
-          <Twitter style={{ color: "#007ce0", marginRight: 10 }} />
-          <Link href="https://twitter.com/zipp_xyz">@zipp_xyz</Link>
-        </Flex>
       </Flex>
-      <Flex mb={2}>{/* <Text>2021 Zipp Inc.</Text> */}</Flex>
+      <Flex mb={50}>
+        <Link href="https://twitter.com/zipp_xyz">
+          <Twitter style={{ color: "#007ce0", marginRight: 10 }} />
+        </Link>
+      </Flex>
     </Flex>
   );
 };
