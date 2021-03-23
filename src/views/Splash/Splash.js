@@ -33,8 +33,8 @@ const SplashView = () => {
           <Heading fontSize={[1, 3]} color="black" textAlign="center">
             <Typed
               strings={[
-                "BUILDING FOR AUDIO, IN CRYPTO ON SOLANA.",
-                "COMING SOON",
+                "BUILDING FOR AUDIO. IN CRYPTO. ON SOLANA.",
+                "COMING SOON.",
               ]}
               startDelay={2000}
               backDelay={3000}
