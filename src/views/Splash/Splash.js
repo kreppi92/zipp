@@ -29,7 +29,7 @@ const SplashView = () => {
             zipp
           </Heading>
         </Flex>
-        <Flex width={[300, 500]} height={50} alignItems="center">
+        <Flex width={[300, 550]} height={50} alignItems="center">
           <Heading fontSize={[1, 3]} color="black" textAlign="center">
             <Typed
               strings={[
