@@ -1,1 +1,2 @@
-export { SplashView } from "./Splash";
+export { Splash } from "./Splash";
+export { Portal } from "./Portal";

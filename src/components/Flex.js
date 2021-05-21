@@ -1,11 +1,6 @@
 import styled from "styled-components";
-import { flexbox, color, layout, space } from "styled-system";
+import { Flex as ChakraFlex } from "@chakra-ui/react";
 
-export const Flex = styled.div`
-  display: flex;
+export const Flex = styled(ChakraFlex)`
   flex-direction: column;
-  ${flexbox}
-  ${space}
-  ${layout}
-  ${color}
 `;

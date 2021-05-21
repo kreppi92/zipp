@@ -1,21 +1,25 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { SplashView } from "./views";
-import { ThemeProvider } from "styled-components";
-import theme from "./theme";
+import { Splash, Portal } from "./views";
+import { ChakraProvider } from "@chakra-ui/react";
+import theme from "./theme/theme";
+import ROUTES from "./routes";
 
 const App = () => {
   return (
-    <ThemeProvider theme={theme}>
+    <ChakraProvider theme={theme}>
       <Router>
         <Switch>
-          <Route path="/">
-            <SplashView />
+          <Route path={ROUTES.PORTAL}>
+            <Portal />
+          </Route>
+          <Route path={ROUTES.HOME}>
+            <Splash />
           </Route>
         </Switch>
       </Router>
-    </ThemeProvider>
+    </ChakraProvider>
   );
 };
 

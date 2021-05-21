@@ -1,9 +1,11 @@
-import { Flex, Heading, Link } from "components";
+import { Heading, Link } from "components";
 import { Twitter } from "@material-ui/icons";
 import ZippAnimation from "components/assets/ZippAnimation";
 import Typed from "react-typed";
 
-const SplashView = () => {
+import { Flex } from "@chakra-ui/react";
+
+const Splash = () => {
   return (
     <Flex
       width="100vw"
@@ -11,10 +13,17 @@ const SplashView = () => {
       bg="white"
       alignItems="center"
       justifyContent="center"
+      direction="column"
+      flexDirection="column"
     >
-      <Flex flexGrow={1} alignItems="center" justifyContent="center">
+      <Flex
+        flexGrow={1}
+        alignItems="center"
+        justifyContent="center"
+        flexDirection="column"
+      >
         <Flex
-          mb={[25, 50]}
+          my={[25, 100]}
           flexDirection={["column", "row"]}
           alignItems="center"
           justifyContent="center"
@@ -29,8 +38,18 @@ const SplashView = () => {
             zipp
           </Heading>
         </Flex>
-        <Flex width={[300, 550]} height={50} alignItems="center">
-          <Heading fontSize={[1, 3]} color="black" textAlign="center">
+        <Flex
+          width={[300, 550]}
+          height={50}
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Heading
+            fontSize={[1, 3]}
+            color="black"
+            textAlign="center"
+            mb={[4, 6]}
+          >
             <Typed
               strings={[
                 "BUILDING FOR AUDIO. IN CRYPTO. ON SOLANA.",
@@ -46,7 +65,15 @@ const SplashView = () => {
           </Heading>
         </Flex>
       </Flex>
-      <Flex mb={50}>
+      <Flex mb={50} flexDirection="column" alignItems="center">
+        <Heading
+          fontSize={[1, 3]}
+          color="black"
+          textAlign="center"
+          mb={[2, 46]}
+        >
+          📍 Miami | Toronto
+        </Heading>
         <Link href="https://twitter.com/zipp_xyz">
           <Twitter style={{ color: "#007ce0", marginRight: 10 }} />
         </Link>
@@ -55,4 +82,4 @@ const SplashView = () => {
   );
 };
 
-export default SplashView;
+export default Splash;

@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { typography, color, layout, space } from "styled-system";
 
 export const Text = styled.div`
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
   ${space};
   ${layout};
   ${color};
@@ -11,6 +11,6 @@ export const Text = styled.div`
 `;
 
 Text.defaultProps = {
-  fontSize: 0,
-  color: "grey",
+  fontSize: 2,
+  color: "offblack",
 };

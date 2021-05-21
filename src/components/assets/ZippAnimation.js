@@ -1,8 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
-
-import { Flex } from "components";
+import { Flex } from "@chakra-ui/react";
 
 const MotionSvg = styled(motion.svg)`
   width: 100%;
@@ -13,10 +12,18 @@ const MotionSvg = styled(motion.svg)`
   stroke-linecap: round;
 `;
 
+const white = "#fff";
 const grey = "#1f2423";
 
-const ZippAnimation = ({ width, height }) => (
-  <Flex width={width} height={height} overflow="hidden" placeContent="center">
+const ZippAnimation = ({ width, height, light }) => (
+  <Flex
+    width={width}
+    height={height}
+    overflow="hidden"
+    alignItems="center"
+    justifyContent="center"
+    direction="column"
+  >
     <MotionSvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
       <defs>
         <linearGradient id="gradient" gradientTransform="rotate(0, 0.5, 0.5)">
@@ -72,13 +79,13 @@ const ZippAnimation = ({ width, height }) => (
         d="M202.7,61.7c-1.5,2.9-3,5.7-4.4,8.3c-1.1,2-2.2,4.1-3.3,6.1c25,15.2,41.7,42.7,41.7,74c0,47.8-38.9,86.7-86.7,86.7
         c-0.4,0-0.7,0-1.1,0c-5,4.8-10.4,9.9-15.9,14.9c5.6,0.9,11.2,1.4,17.1,1.4c56.8,0,103-46.2,103-103
         C253,112.6,232.8,79.7,202.7,61.7z"
-        fill={grey}
+        fill={light ? white : grey}
       />
       <motion.path
         d="M105,224.1c-24.9-15.2-41.6-42.7-41.6-74c0-47.8,38.9-86.7,86.7-86.7c0.4,0,0.8,0,1.2,0c4.9-4.8,10.3-9.9,15.9-14.9
         c-5.6-0.9-11.3-1.4-17.1-1.4c-56.8,0-103,46.2-103,103c0,37.5,20.2,70.4,50.2,88.4c1.5-2.9,3-5.7,4.4-8.3
         C102.7,228.2,103.8,226.1,105,224.1z"
-        fill={grey}
+        fill={light ? white : grey}
       />
       <motion.path
         d="M171,138.2c-5.1-1.8-10.2-3.5-15.4-5.2c-2.8-0.9-5.5-1.8-8.3-2.7c8.2-11.8,16.1-23.8,23.7-36.1
@@ -87,7 +94,7 @@ const ZippAnimation = ({ width, height }) => (
         c2.7,0.9,5.5,1.8,8.2,2.7c-8.2,11.8-16.1,23.8-23.7,36.1c-5.9,9.8-11.8,19.6-17.2,29.7c-5.4,10.1-10.7,20.4-15.2,31.3
         c9.5-6.9,18.3-14.4,26.9-22c8.6-7.6,16.8-15.6,25-23.6c16.1-16.1,31.5-32.9,46.1-50.2l15.7-18.6l-24-8.8
         C181.2,141.8,176.1,140,171,138.2z"
-        fill={grey}
+        fill={light ? white : grey}
       />
       <motion.path
         d="M190.2,133c-5.7-2.1-10.6-3.8-15.5-5.5c-3.1-1.1-6.2-2.1-9.3-3.2c5.5-8.2,10.6-16.1,15.4-24

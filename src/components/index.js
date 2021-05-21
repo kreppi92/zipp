@@ -1,7 +1,14 @@
 export { StyledHeading } from "./StyledHeading";
-export { Flex } from "./Flex";
 export { Box } from "./Box";
 export { Image } from "./Image";
 export { Heading } from "./Heading";
 export { Text } from "./Text";
 export { Link } from "./Link";
+export { Card } from "./Card";
+export { default as GradientMesh } from "./GradientMesh";
+export { default as DatePicker } from "./DatePicker";
+export { UserCard } from "./UserCard";
+export { MusicCard } from "./MusicCard";
+export { default as Dropzone } from "./Dropzone";
+export { AudioPlayer } from "./AudioPlayer";
+export { default as UserProfile } from "./UserProfile";
