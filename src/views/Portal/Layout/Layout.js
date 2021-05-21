@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // import { Link } from "react-router-dom";
 import { Heading } from "components";
-import { Flex, Button } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import Menu from "./Menu";
 import ZippAnimation from "components/assets/ZippAnimation";
 import { MotionFlex } from "./motion";

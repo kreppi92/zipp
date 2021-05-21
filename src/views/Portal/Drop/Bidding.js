@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading, DatePicker } from "components";
+import { Heading } from "components";
 import { Grid, GridItem, Flex, Input } from "@chakra-ui/react";
 
 const StyledInput = ({ label, placeholder }) => {

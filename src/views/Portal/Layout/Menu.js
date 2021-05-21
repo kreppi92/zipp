@@ -1,15 +1,7 @@
 import React from "react";
 import { UserProfile } from "components";
 import { Link } from "react-router-dom";
-import {
-  Box,
-  Flex,
-  Stack,
-  Text,
-  Divider,
-  Icon,
-  HStack,
-} from "@chakra-ui/react";
+import { Box, Stack, Text, Divider, Icon, HStack } from "@chakra-ui/react";
 import { MotionBox } from "./motion";
 
 const MENU_ITEM_HEIGHT = 48 + 8;
@@ -74,7 +66,7 @@ const Menu = ({ menus, selected, setSelected }) => {
           position="relative"
         >
           {menus.map((menuItem) => {
-            const { label, icon, route, bg } = menuItem;
+            const { label, icon, route } = menuItem;
             return (
               <Box
                 key={label}
