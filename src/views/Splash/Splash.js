@@ -1,5 +1,4 @@
 import { Heading, Link } from "components";
-import { Twitter } from "@material-ui/icons";
 import ZippAnimation from "components/assets/ZippAnimation";
 import Typed from "react-typed";
 
@@ -75,7 +74,7 @@ const Splash = () => {
           📍 Miami | Toronto
         </Heading>
         <Link href="https://twitter.com/zipp_xyz">
-          <Twitter style={{ color: "#007ce0", marginRight: 10 }} />
+          {/* <Twitter style={{ color: "#007ce0", marginRight: 10 }} /> */}
         </Link>
       </Flex>
     </Flex>

@@ -8,11 +8,12 @@ import { Drop } from "./Drop";
 import { CurrentDrops } from "./CurrentDrops";
 import { DropDetails } from "./DropDetails";
 import { Layout } from "./Layout";
+import { Explore } from "./Explore";
 import ROUTES from "./routes";
 
 const PortalRouter = () => {
   const { path } = useRouteMatch();
-  console.log(`${path}${ROUTES.DROP_DETAILS}`);
+
   return (
     <Flex
       flexGrow={1}
@@ -38,6 +39,9 @@ const PortalRouter = () => {
             </Route>
             <Route path={`${path}${ROUTES.DROP_DETAILS}`}>
               <DropDetails />
+            </Route>
+            <Route path={`${path}${ROUTES.EXPLORE}`}>
+              <Explore />
             </Route>
           </Switch>
         </Layout>

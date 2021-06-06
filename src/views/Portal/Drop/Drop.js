@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import { Heading } from "components";
+import { Heading, Step } from "components";
 
-import { Button, Flex } from "@chakra-ui/react";
+import { Box, Button, Flex, HStack } from "@chakra-ui/react";
 
 import Name from "./Name";
 import Upload from "./Upload";
@@ -33,35 +33,42 @@ const Drop = () => {
       <Heading fontSize={4} mb={2}>
         New Drop
       </Heading>
-      <Flex mb={3} flexDirection="column">
+      <HStack as="ol" listStyleType="none" spacing="0" mb={6}>
+        {contents.map((component, index) => (
+          <Step isCurrent={current === index}>{component.name}</Step>
+        ))}
+      </HStack>
+      <Flex mb={3} flexDirection="column" minHeight={400}>
         {getStepContent(current)}
       </Flex>
       {current !== contents.length - 1 && (
         <>
-          {!!current && (
-            <Button
-              size="large"
-              onClick={() =>
-                current === contents.length - 1
-                  ? setCurrent(0)
-                  : setCurrent(current - 1)
-              }
-            >
-              Back
-            </Button>
-          )}
           <Button
-            size="large"
+            size="lg"
             variant="solid"
+            my={3}
             onClick={() =>
               current === contents.length - 1
                 ? setCurrent(0)
                 : setCurrent(current + 1)
             }
           >
-            {contents.length - 2 === current ? "Submit" : "Next"}
+            {contents.length - 1 === current ? "Submit" : "Next"}
           </Button>
         </>
+      )}
+      {!!current && (
+        <Button
+          size="lg"
+          variant="outline"
+          onClick={() =>
+            current === contents.length - 1
+              ? setCurrent(0)
+              : setCurrent(current - 1)
+          }
+        >
+          Back
+        </Button>
       )}
     </>
   );

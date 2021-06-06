@@ -30,6 +30,7 @@ export const MusicCard = ({
   title,
   artistUsername,
   transaction,
+  details,
   ...otherProps
 }) => {
   const [isHovering, setIsHovering] = useState(false);
@@ -48,13 +49,14 @@ export const MusicCard = ({
     >
       <Flex
         width="100%"
-        height={150}
+        height="75%"
         backgroundImage={`url(${image})`}
         backgroundPosition="center"
         backgroundSize="cover"
         overflow="hidden"
         position="relative"
         flexDirection="column"
+        flexGrow={1}
       >
         <OverlayWrapper isHovering={isHovering}>
           <Overlay gradient="radial-gradient(ellipse at top right, rgba(63, 211, 184, 0) 30%, rgba(63, 211, 184, 1) 100%)" />
@@ -77,10 +79,16 @@ export const MusicCard = ({
           <AudioPlayer audioFile={file} isHovering={isHovering} />
         </Flex>
       </Flex>
-      <Flex p={3} flexDirection="column" as={Link} to="/portal/drop/1">
-        <Text fontWeight={700}>{artistUsername}</Text>
-        <Text fontWeight={300}>{title}</Text>
-      </Flex>
+      {details && (
+        <Flex p={3} flexDirection="column" as={Link} to="/portal/drop/1">
+          <Text fontWeight={700}>{artistUsername}</Text>
+          <Text fontWeight={300}>{title}</Text>
+        </Flex>
+      )}
     </HoverCard>
   );
+};
+
+MusicCard.defaultProps = {
+  details: true,
 };

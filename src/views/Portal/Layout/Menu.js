@@ -1,7 +1,15 @@
 import React from "react";
-import { UserProfile } from "components";
+import { UserProfile, WalletProfile } from "components";
 import { Link } from "react-router-dom";
-import { Box, Stack, Text, Divider, Icon, HStack } from "@chakra-ui/react";
+import {
+  Box,
+  Stack,
+  Text,
+  Divider,
+  Icon,
+  HStack,
+  Button,
+} from "@chakra-ui/react";
 import { MotionBox } from "./motion";
 
 const MENU_ITEM_HEIGHT = 48 + 8;
@@ -25,10 +33,17 @@ const Menu = ({ menus, selected, setSelected }) => {
         >
           Your profile
         </Text>
-        <UserProfile name="DJ Khaled" email="djkhaled@gmail.com" />
+        <Box
+          display="block"
+          transition="background 0.1s"
+          rounded="xl"
+          _hover={{ bg: "whiteAlpha.200" }}
+          cursor="pointer"
+        >
+          <UserProfile name="DJ Khaled" email="djkhaled@gmail.com" />
+        </Box>
 
         <Divider borderColor="whiteAlpha.400" my={4} />
-
         <Text
           px="3"
           fontSize="xs"
@@ -38,7 +53,22 @@ const Menu = ({ menus, selected, setSelected }) => {
           color="gray.500"
           mb="3"
         >
-          Navigation
+          Connected wallet
+        </Text>
+        <Button>
+          <WalletProfile />
+        </Button>
+        <Divider borderColor="whiteAlpha.400" my={4} />
+        <Text
+          px="3"
+          fontSize="xs"
+          fontWeight="semibold"
+          textTransform="uppercase"
+          letterSpacing="widest"
+          color="gray.500"
+          mb="3"
+        >
+          Menu
         </Text>
       </Box>
       <Box position="relative">

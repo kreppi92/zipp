@@ -7,13 +7,13 @@ const Review = ({ songDetails }) => {
   return (
     <>
       <Heading fontSize={2} mb={2}>
-        CONGRATS! You have submitted your NFT
+        Review your NFT for submission
       </Heading>
-      <Flex justifyContent="center" alignItems="center" minHeight={300}>
+      <Flex justifyContent="center" alignItems="center" minHeight={400}>
         <MusicCard {...songDetails} />
       </Flex>
-      <Button size="large" to="/portal/balances" as={Link}>
-        Home
+      <Button to="/portal/balances" as={Link}>
+        Submit
       </Button>
     </>
   );

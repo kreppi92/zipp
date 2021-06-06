@@ -11,9 +11,6 @@ const Name = ({ songDetails, setSongDetails }) => {
         </Heading>
         <Input
           placeholder="Enter song name"
-          bordered={false}
-          borderBottom="1px"
-          size="large"
           onChange={(e) =>
             setSongDetails({ ...songDetails, title: e.target.value })
           }

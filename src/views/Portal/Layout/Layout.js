@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // import { Link } from "react-router-dom";
-import { Heading } from "components";
-import { Flex } from "@chakra-ui/react";
+import { Text, NavMenu } from "components";
+import { Flex, Box, HStack } from "@chakra-ui/react";
 import Menu from "./Menu";
 import ZippAnimation from "components/assets/ZippAnimation";
 import { MotionFlex } from "./motion";
@@ -40,11 +40,16 @@ const Layout = ({ children }) => {
   return (
     <>
       <Flex justifyContent="center">
-        <Flex width={MAXWIDTH} maxWidth="100%">
-          <Flex mr={6}>
+        <HStack width={MAXWIDTH} py={1}>
+          <HStack mr={14} alignItems="center">
             <ZippAnimation width={50} height={50} light />
-          </Flex>
-        </Flex>
+            <Text fontFamily="Space mono" fontSize={5} color="white" pb={1}>
+              zipp
+            </Text>
+          </HStack>
+
+          <NavMenu.Desktop />
+        </HStack>
       </Flex>
       <Flex
         flexGrow={1}
@@ -55,7 +60,7 @@ const Layout = ({ children }) => {
         <Flex
           width="100%"
           direction="column"
-          backgroundImage="url(https://s.abcnews.com/images/Nightline/190530_ntl_dj_khaled_1253_hpMain_16x9_992.jpg)"
+          backgroundImage="url(https://static.billboard.com/files/media/dj-khaled-bb14-2017-feat-fskg-billboard-1548-compressed.jpg)"
           backgroundPosition="center"
           position="relative"
           minHeight={350}
@@ -69,10 +74,8 @@ const Layout = ({ children }) => {
             height="100%"
             direction="column"
           >
-            <Heading color="white">Welcome to your dashboard,</Heading>
-            <Heading color="white" fontSize={8} alt>
-              DJ Khaled
-            </Heading>
+            {/* <Heading color="white">Welcome to your dashboard,</Heading>
+            <Heading color="white">DJ Khaled</Heading> */}
           </Flex>
           {/* Overlays */}
           <Flex

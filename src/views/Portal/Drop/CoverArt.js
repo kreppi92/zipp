@@ -1,7 +1,7 @@
 import React from "react";
 import { Heading, MusicCard, Dropzone } from "components";
 
-const Upload = ({ songDetails, setSongDetails }) => {
+const CoverArt = ({ songDetails, setSongDetails }) => {
   const handleOnCoverArtDrop = (acceptedFiles) => {
     setSongDetails({
       ...songDetails,
@@ -21,4 +21,4 @@ const Upload = ({ songDetails, setSongDetails }) => {
   );
 };
 
-export default Upload;
+export default CoverArt;

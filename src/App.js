@@ -3,7 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Splash, Portal } from "./views";
 import { ChakraProvider } from "@chakra-ui/react";
-import theme from "./theme/theme";
+import theme from "./theme";
 import ROUTES from "./routes";
 
 const App = () => {
