@@ -1,4 +1,4 @@
-import { Heading, Link } from "components";
+import { Text, Link } from "components";
 import ZippAnimation from "components/assets/ZippAnimation";
 import Typed from "react-typed";
 
@@ -28,14 +28,14 @@ const Splash = () => {
           justifyContent="center"
         >
           <ZippAnimation width={150} height={150} />
-          <Heading
+          <Text
             fontFamily="Space mono"
             fontSize={[6, "112px"]}
             mb={25}
             color="black"
           >
             zipp
-          </Heading>
+          </Text>
         </Flex>
         <Flex
           width={[300, 550]}
@@ -43,7 +43,8 @@ const Splash = () => {
           alignItems="center"
           justifyContent="center"
         >
-          <Heading
+          <Text
+            fontFamily="JetBrains Mono"
             fontSize={[1, 3]}
             color="black"
             textAlign="center"
@@ -61,18 +62,19 @@ const Splash = () => {
               cursorChar="_"
               loop={true}
             />
-          </Heading>
+          </Text>
         </Flex>
       </Flex>
       <Flex mb={50} flexDirection="column" alignItems="center">
-        <Heading
+        <Text
+          fontFamily="JetBrains Mono"
           fontSize={[1, 3]}
           color="black"
           textAlign="center"
           mb={[2, 46]}
         >
           📍 Miami | Toronto
-        </Heading>
+        </Text>
         <Link href="https://twitter.com/zipp_xyz">
           {/* <Twitter style={{ color: "#007ce0", marginRight: 10 }} /> */}
         </Link>

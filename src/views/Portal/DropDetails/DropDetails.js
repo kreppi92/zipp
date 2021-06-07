@@ -1,21 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import { Box, Flex, HStack, Button, Text } from "@chakra-ui/react";
 import {
   MusicCard,
-  UserCard,
   Heading,
   UserCardWide,
   Card,
   UserCardSmall,
-  UserProfile,
 } from "components";
 import { calculateCountdownFromNow } from "utils";
 
 import musicQuery from "./response.json";
 import biddersQuery from "./bidders.json";
 
-const countdownDate = "2021-07-05 17:00";
+const countdownDate = Date(+1).toDateString;
 
 const DropDetails = () => {
   const [
