@@ -23,3 +23,4 @@ export { default as Step } from "./Step";
 export { default as StepContent } from "./StepContent";
 export { NavMenu } from "./NavMenu";
 export { Notification } from "./Notification";
+export { Carousel } from "./Carousel";

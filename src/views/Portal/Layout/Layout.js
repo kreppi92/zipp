@@ -14,7 +14,7 @@ import {
 
 const MAXWIDTH = 1024;
 
-const Layout = ({ children }) => {
+const Layout = ({ children, withMenu }) => {
   const menus = [
     {
       label: "Balances",
@@ -37,6 +37,7 @@ const Layout = ({ children }) => {
   ];
 
   const [selected, setSelected] = useState(menus[0]);
+
   return (
     <>
       <Flex justifyContent="center">
@@ -108,23 +109,25 @@ const Layout = ({ children }) => {
           mt={-20}
           zIndex={1000}
         >
-          <Flex minWidth="250px" direction="column" bg="white">
-            <MotionFlex
-              width="254px"
-              bg="#17181C"
-              height="100%"
-              p="4"
-              flexDirection="column"
-              overflow="hidden"
-              animate="254px"
-            >
-              <Menu
-                setSelected={setSelected}
-                selected={selected}
-                menus={menus}
-              />
-            </MotionFlex>
-          </Flex>
+          {withMenu && (
+            <Flex minWidth="250px" direction="column" bg="white">
+              <MotionFlex
+                width="254px"
+                bg="#17181C"
+                height="100%"
+                p="4"
+                flexDirection="column"
+                overflow="hidden"
+                animate="254px"
+              >
+                <Menu
+                  setSelected={setSelected}
+                  selected={selected}
+                  menus={menus}
+                />
+              </MotionFlex>
+            </Flex>
+          )}
           <Flex p={8} m={0} flexGrow={1} bg="offwhite" direction="column">
             {children}
           </Flex>
@@ -132,6 +135,10 @@ const Layout = ({ children }) => {
       </Flex>
     </>
   );
+};
+
+Layout.defaultProps = {
+  withMenu: true,
 };
 
 export default Layout;

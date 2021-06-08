@@ -26,24 +26,33 @@ const PortalRouter = () => {
         <Route path={`${path}${ROUTES.LOGIN}`} exact>
           <Login />
         </Route>
-        <Layout>
-          <Switch>
-            <Route path={`${path}${ROUTES.BALANCES}`} exact>
-              <Balances />
-            </Route>
-            <Route path={`${path}${ROUTES.NEW_DROP}`} exact>
-              <Drop />
-            </Route>
-            <Route path={`${path}${ROUTES.CURRENT_DROPS}`} exact>
-              <CurrentDrops />
-            </Route>
-            <Route path={`${path}${ROUTES.DROP_DETAILS}`}>
-              <DropDetails />
-            </Route>
-            <Route path={`${path}${ROUTES.EXPLORE}`}>
-              <Explore />
-            </Route>
-          </Switch>
+      </Switch>
+
+      <Switch>
+        <Route path={`${path}${ROUTES.BALANCES}`} exact>
+          <Layout>
+            <Balances />
+          </Layout>
+        </Route>
+        <Route path={`${path}${ROUTES.NEW_DROP}`} exact>
+          <Layout>
+            <Drop />
+          </Layout>
+        </Route>
+        <Route path={`${path}${ROUTES.CURRENT_DROPS}`} exact>
+          <Layout>
+            <CurrentDrops />
+          </Layout>
+        </Route>
+        <Route path={`${path}${ROUTES.DROP_DETAILS}`}>
+          <Layout>
+            <DropDetails />
+          </Layout>
+        </Route>
+        <Layout withMenu={false}>
+          <Route path={`${path}${ROUTES.EXPLORE}`}>
+            <Explore />
+          </Route>
         </Layout>
         <Redirect to={`${path}${ROUTES.LOGIN}`} />
       </Switch>

@@ -1,3 +1,10 @@
+import { Carousel } from "components";
+import { VStack } from "@chakra-ui/react";
+
 export const Explore = () => {
-  return <>Explore page coming soon!</>;
+  return (
+    <VStack>
+      <Carousel />
+    </VStack>
+  );
 };
