@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-// import { Link } from "react-router-dom";
-import { Text, NavMenu } from "components";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { Text, NavMenu, Notification } from "components";
 import { Flex, Box, HStack } from "@chakra-ui/react";
 import Menu from "./Menu";
 import ZippAnimation from "components/assets/ZippAnimation";
@@ -15,6 +15,8 @@ import {
 const MAXWIDTH = 1024;
 
 const Layout = ({ children, withMenu }) => {
+  const location = useLocation();
+
   const menus = [
     {
       label: "Balances",
@@ -128,7 +130,14 @@ const Layout = ({ children, withMenu }) => {
               </MotionFlex>
             </Flex>
           )}
-          <Flex p={8} m={0} flexGrow={1} bg="offwhite" direction="column">
+          <Flex
+            p={8}
+            m={0}
+            flexGrow={1}
+            bg="offwhite"
+            direction="column"
+            maxWidth={MAXWIDTH}
+          >
             {children}
           </Flex>
         </Flex>

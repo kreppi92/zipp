@@ -10,14 +10,25 @@ import {
 import * as React from "react";
 
 export const NotificationStructure = (props) => {
-  const { primaryAction, secondaryAction, children, icon, ...flexProps } =
-    props;
+  const {
+    primaryAction,
+    secondaryAction,
+    children,
+    icon,
+    showNotification,
+    ...flexProps
+  } = props;
   return (
     <Flex
       width="md"
       boxShadow="lg"
       borderRadius="base"
       overflow="hidden"
+      position="absolute"
+      right={showNotification ? 10 : -500}
+      top={10}
+      zIndex={1000}
+      transition="1s"
       bg={useColorModeValue("white", "gray.700")}
       {...flexProps}
     >
@@ -37,9 +48,9 @@ export const NotificationStructure = (props) => {
         divider={<StackDivider />}
         spacing="0"
       >
-        <Box px="4" py="3">
+        <Flex px="4" py="3">
           {children}
-        </Box>
+        </Flex>
         <Stack
           direction={{ base: "row", sm: "column" }}
           height="full"

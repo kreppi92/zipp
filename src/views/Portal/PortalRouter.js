@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Route, Switch, Redirect, useRouteMatch } from "react-router-dom";
 
 import { Flex } from "@chakra-ui/react";
@@ -11,8 +11,12 @@ import { Layout } from "./Layout";
 import { Explore } from "./Explore";
 import ROUTES from "./routes";
 
+import dropsQuery from "./response.json";
+
 const PortalRouter = () => {
   const { path } = useRouteMatch();
+
+  const [yourNftDrops, setYourNftDrops] = useState(dropsQuery);
 
   return (
     <Flex
@@ -31,12 +35,18 @@ const PortalRouter = () => {
       <Switch>
         <Route path={`${path}${ROUTES.BALANCES}`} exact>
           <Layout>
-            <Balances />
+            <Balances
+              yourNftDrops={yourNftDrops}
+              setYourNftDrops={setYourNftDrops}
+            />
           </Layout>
         </Route>
         <Route path={`${path}${ROUTES.NEW_DROP}`} exact>
           <Layout>
-            <Drop />
+            <Drop
+              yourNftDrops={yourNftDrops}
+              setYourNftDrops={setYourNftDrops}
+            />
           </Layout>
         </Route>
         <Route path={`${path}${ROUTES.CURRENT_DROPS}`} exact>

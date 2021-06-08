@@ -2,6 +2,7 @@ const Input = {
   defaultProps: {
     size: "lg",
     colorScheme: "teal",
+    bgColor: "white",
   },
 };
 

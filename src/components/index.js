@@ -24,3 +24,4 @@ export { default as StepContent } from "./StepContent";
 export { NavMenu } from "./NavMenu";
 export { Notification } from "./Notification";
 export { Carousel } from "./Carousel";
+export { Countdown } from "./Countdown";

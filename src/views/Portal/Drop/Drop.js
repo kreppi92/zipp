@@ -12,7 +12,7 @@ import Review from "./Review";
 
 const contents = [Name, Upload, CoverArt, Bidding, Review];
 
-const Drop = () => {
+const Drop = ({ yourNftDrops, setYourNftDrops }) => {
   const [current, setCurrent] = useState(0);
   const [songDetails, setSongDetails] = useState({
     title: "",
@@ -24,7 +24,12 @@ const Drop = () => {
   const getStepContent = (step) => {
     const Component = contents[step];
     return (
-      <Component songDetails={songDetails} setSongDetails={setSongDetails} />
+      <Component
+        songDetails={songDetails}
+        setSongDetails={setSongDetails}
+        yourNftDrops={yourNftDrops}
+        setYourNftDrops={setYourNftDrops}
+      />
     );
   };
 

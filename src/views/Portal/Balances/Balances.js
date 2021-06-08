@@ -1,30 +1,24 @@
 import React from "react";
-import { Heading, MusicCard } from "components";
+import { useLocation } from "react-router-dom";
+import { Heading, MusicCard, Notification } from "components";
 import musicQuery from "./response.json";
-import dropsQuery from "./response2.json";
 import { Flex, Button, VStack, Image } from "@chakra-ui/react";
 import { useWallet } from "contexts";
 // import ChartsComponent from "./ChartsComponent";
 import bitcoinWallet from "assets/BitcoinWallet.png";
 
-const Balances = () => {
+const Balances = ({ yourNftDrops }) => {
   const { selectedWallet, setSelectedWallet, urlWallet } = useWallet();
+  const location = useLocation();
 
+  console.log(location.state?.showNotification);
   return (
     <>
       {selectedWallet && selectedWallet.connected ? (
         <>
-          <Flex mb={4} flexDirection="column">
-            <Heading fontSize={4} mb={2}>
-              Your coins
-            </Heading>
-            <Heading fontSize={2} mb={2}>
-              10,0000 SOL
-            </Heading>
-            <Heading fontSize={2} mb={2}>
-              123 ZPP
-            </Heading>
-          </Flex>
+          <Notification
+            showNotification={location.state?.showNotification ?? false}
+          />
           {/* <ChartsComponent /> */}
           <Flex flexDirection="column">
             <Heading fontSize={4} mb={2}>
@@ -42,7 +36,7 @@ const Balances = () => {
             </Heading>
           </Flex>
           <Flex flexGrow={1} flexDirection="row" mb={4}>
-            {dropsQuery.map((musicObject, i) => (
+            {yourNftDrops.map((musicObject, i) => (
               <MusicCard key={i} {...musicObject} />
             ))}
           </Flex>

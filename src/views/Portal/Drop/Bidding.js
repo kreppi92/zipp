@@ -20,7 +20,6 @@ import {
 
 const Bidding = () => {
   const {
-    handleSubmit,
     register,
     formState: { errors, isSubmitting },
     control,
@@ -34,9 +33,9 @@ const Bidding = () => {
       <FormControl>
         <Grid templateColumns="repeat(2, auto)">
           {/*  */}
-          <GridItem colSpan={[2, 1]} mr={3}>
+          <GridItem colSpan={[2, 1]} mr={3} mt={10}>
             <FormLabel htmlFor="name">Enter SOL amount</FormLabel>
-            <NumberInput>
+            <NumberInput bg="white">
               <NumberInputField
                 id="solAmount"
                 {...register("solAmount", { required: true })}
@@ -48,9 +47,9 @@ const Bidding = () => {
             </NumberInput>
           </GridItem>
           {/*  */}
-          <GridItem colSpan={[2, 1]} mr={3}>
+          <GridItem colSpan={[2, 1]} mr={3} mt={10}>
             <FormLabel htmlFor="name">Enter buyout price</FormLabel>
-            <NumberInput>
+            <NumberInput bg="white">
               <NumberInputField
                 id="solBuyout"
                 {...register("solBuyout", { required: true })}
@@ -62,7 +61,7 @@ const Bidding = () => {
             </NumberInput>
           </GridItem>
           {/*  */}
-          <GridItem colSpan={[2, 1]} mr={3}>
+          <GridItem colSpan={[2, 1]} mr={3} mt={10}>
             <FormLabel htmlFor="name">Bid drop date</FormLabel>
             <Controller
               control={control}
@@ -72,14 +71,14 @@ const Bidding = () => {
                   onChange={onChange}
                   onBlur={onBlur}
                   selected={value}
-                  customInput={<Input />}
+                  customInput={<Input bg="white" width="100%" />}
                   autoComplete="off"
                 />
               )}
             />
           </GridItem>
           {/*  */}
-          <GridItem colSpan={[2, 1]} mr={3}>
+          <GridItem colSpan={[2, 1]} mr={3} mt={10}>
             <FormLabel htmlFor="name">Bid end date</FormLabel>
             <Controller
               control={control}
@@ -90,16 +89,16 @@ const Bidding = () => {
                   onChange={onChange}
                   onBlur={onBlur}
                   selected={value}
-                  customInput={<Input />}
+                  customInput={<Input bg="white" />}
                   autoComplete="off"
                 />
               )}
             />
           </GridItem>
           {/*  */}
-          <GridItem colSpan={[2, 1]} mr={3}>
+          <GridItem colSpan={[2, 1]} mr={3} mt={10}>
             <FormLabel htmlFor="name">Royalty %</FormLabel>
-            <NumberInput>
+            <NumberInput bg="white">
               <NumberInputField
                 id="royalty"
                 {...register("royalty", { required: true })}

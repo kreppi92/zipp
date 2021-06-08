@@ -10,6 +10,7 @@ const Name = ({ songDetails, setSongDetails }) => {
           What is your song's name?
         </Heading>
         <Input
+          bg="white"
           placeholder="Enter song name"
           onChange={(e) =>
             setSongDetails({ ...songDetails, title: e.target.value })

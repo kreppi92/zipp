@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Card, Text, AudioPlayer } from "components";
+import { Card, Text, AudioPlayer, Countdown } from "components";
 import { Flex } from "@chakra-ui/react";
 
 const HoverCard = styled(Card)`

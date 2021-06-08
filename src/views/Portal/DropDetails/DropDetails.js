@@ -6,34 +6,13 @@ import {
   UserCardWide,
   Card,
   UserCardSmall,
+  Countdown,
 } from "components";
-import { calculateCountdownFromNow } from "utils";
 
 import musicQuery from "./response.json";
 import biddersQuery from "./bidders.json";
 
-const countdownDate = Date(+1).toDateString;
-
 const DropDetails = () => {
-  const [
-    {
-      expired,
-      values: { days, hours, minutes, seconds },
-    },
-    setResult,
-  ] = useState(() => calculateCountdownFromNow(countdownDate));
-
-  useEffect(() => {
-    if (expired) return undefined;
-    const intervalId = setInterval(
-      () => setResult(calculateCountdownFromNow(countdownDate)),
-      1000
-    );
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, [expired]);
-
   return (
     <Flex flexDirection="column">
       {/* <UserCardWide /> */}
@@ -78,9 +57,7 @@ const DropDetails = () => {
                 >
                   Auction Ends
                 </Text>
-                <Heading fontSize={4} mb={2}>
-                  {days && `${days}d`} {hours}:{minutes}:{seconds}
-                </Heading>
+                <Countdown />
               </Flex>
             </Flex>
             <Button mb={2}>Bid now</Button>

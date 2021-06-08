@@ -11,6 +11,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { MotionBox } from "./motion";
+import { useWallet } from "contexts";
 
 const MENU_ITEM_HEIGHT = 48 + 8;
 
@@ -18,6 +19,7 @@ const Menu = ({ menus, selected, setSelected }) => {
   const index = menus.findIndex(
     (menuItem) => menuItem.label === selected.label
   );
+  const { selectedWallet, setSelectedWallet, urlWallet } = useWallet();
 
   return (
     <>
@@ -58,6 +60,29 @@ const Menu = ({ menus, selected, setSelected }) => {
         <Button>
           <WalletProfile />
         </Button>
+        {selectedWallet && selectedWallet.connected && (
+          <>
+            {" "}
+            <Divider borderColor="whiteAlpha.400" my={4} />
+            <Text
+              px="3"
+              fontSize="xs"
+              fontWeight="semibold"
+              textTransform="uppercase"
+              letterSpacing="widest"
+              color="gray.500"
+              mb="3"
+            >
+              Your balances
+            </Text>
+            <Text color="gray.400" px="3" fontFamily="JetBrains Mono" mb={2}>
+              280,000 SOL
+            </Text>
+            <Text color="gray.400" px="3" fontFamily="JetBrains Mono" mb={2}>
+              23,000 ZPP
+            </Text>
+          </>
+        )}
         <Divider borderColor="whiteAlpha.400" my={4} />
         <Text
           px="3"

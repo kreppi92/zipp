@@ -37,7 +37,7 @@ const Login = () => {
             <Box mb={[3, 4]}>
               <Text fontSize={[1, 2]}>Log in to the Creator portal below</Text>
             </Box>
-            <Button icon={<FaTwitter />} to="/portal/balances" as={Link}>
+            <Button icon={<FaTwitter />} to="/portal/explore" as={Link}>
               Log in using twitter
             </Button>
           </Flex>

@@ -2,7 +2,7 @@ import { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "popmotion";
 import styled from "styled-components";
-import { IconButton } from "@chakra-ui/react";
+import { IconButton, Text, VStack } from "@chakra-ui/react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { images } from "./images";
 import { position } from "styled-system";
@@ -17,7 +17,7 @@ const Container = styled.div`
   overflow: hidden;
 `;
 
-const NavigationButtonContainer = styled.div`
+const FloatingContainer = styled.div`
   position: absolute;
   width: 40px;
   height: 40px;
@@ -83,7 +83,7 @@ export const Carousel = ({ images }) => {
   );
 
   useEffect(() => {
-    setTimeout(() => paginate(1), 3000);
+    setTimeout(() => paginate(1), 5000);
   }, [paginate]);
 
   return (
@@ -91,7 +91,7 @@ export const Carousel = ({ images }) => {
       <AnimatePresence initial={false} custom={direction}>
         <MotionImage
           key={page}
-          src={images[imageIndex]}
+          src={images[imageIndex].image}
           custom={direction}
           variants={variants}
           initial="enter"
@@ -115,7 +115,17 @@ export const Carousel = ({ images }) => {
           }}
         />
       </AnimatePresence>
-      <NavigationButtonContainer left="10px">
+      <FloatingContainer>
+        <VStack justifyContent="center" alignItems="center" width={400}>
+          <Text fontSize="40px" align="center" {...images[imageIndex].styled}>
+            {images[imageIndex].title}
+          </Text>
+          <Text {...images[imageIndex].styled}>
+            {images[imageIndex].description}
+          </Text>
+        </VStack>
+      </FloatingContainer>
+      <FloatingContainer left="10px">
         <IconButton
           variant="outline"
           colorScheme="black"
@@ -124,8 +134,8 @@ export const Carousel = ({ images }) => {
           onClick={() => paginate(1)}
           size="sm"
         />
-      </NavigationButtonContainer>
-      <NavigationButtonContainer right="10px">
+      </FloatingContainer>
+      <FloatingContainer right="10px">
         <IconButton
           variant="outline"
           colorScheme="black"
@@ -134,7 +144,7 @@ export const Carousel = ({ images }) => {
           onClick={() => paginate(-1)}
           size="sm"
         />
-      </NavigationButtonContainer>
+      </FloatingContainer>
     </Container>
   );
 };
