@@ -30,9 +30,6 @@ const PortalRouter = () => {
         <Route path={`${path}${ROUTES.LOGIN}`} exact>
           <Login />
         </Route>
-      </Switch>
-
-      <Switch>
         <Route path={`${path}${ROUTES.BALANCES}`} exact>
           <Layout>
             <Balances

@@ -28,7 +28,7 @@ const Bidding = () => {
   return (
     <Flex minHeight={400} flexDirection="column">
       <Heading fontSize={2} mb={2}>
-        Fill out your form data
+        Fill out your auction info
       </Heading>
       <FormControl>
         <Grid templateColumns="repeat(2, auto)">
